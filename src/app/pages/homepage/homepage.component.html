@@ -1,0 +1,24 @@
+<div class="todo">
+  
+        <h1 class="text-center my-5 text-danger">My Todo List</h1>
+        <div class="container d-flex flex-column   justify-content-center align-items-center">
+            <div class="addInput my-2"><input type="text" class="txt" [(ngModel)]="title"/>&nbsp;
+               <button (click)="add()">add</button> </div>
+
+
+        <div class="box py-5">
+            <ul class="list">
+                @for(item of todo;track item.id){
+                <li class="d-flex justify-content-between">
+                    <input type="checkbox" name="packersOff" value="1">
+                    <p class="strikethrough" [ngClass]="item.completed?'pstrikethrough': 'null'  " id="title">{{item.title}}</p>
+                    <i class="bi bi-trash text-danger" (click)="del(item)"></i>
+                </li>
+            }
+            </ul>
+
+
+        </div>
+    </div>
+</div>
+
